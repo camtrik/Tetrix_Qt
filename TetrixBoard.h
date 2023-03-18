@@ -24,19 +24,26 @@ signals:
 
 protected:
 	void paintEvent(QPaintEvent* event) override;
-	//void keyPressEvent(QKeyEvent* event) override;
-	//void timerEvent(QTimerEvent* event) override;
+	void keyPressEvent(QKeyEvent* event) override;
+	void timerEvent(QTimerEvent* event) override;
 
 
 private:
 	// number of squares per row and column
 	enum { BoardWidth = 10, BoardHeight = 22 };
 
+	TetrixShape& shapeAt(int i, int j) { return nowBoard[i][j]; }
 	// width and height of a square
 	int squareWidth() { return contentsRect().width() / BoardWidth; }
 	int squareHeight() { return contentsRect().height() / BoardHeight; }
 	void newPiece();
 	void clearBoard();
+
+	void pieceDropped();
+	void oneLineDown();
+	void dropDown();
+	void removeFullLines();
+
 	void showNextPiece();
 	void drawSquare(QPainter& painter, int x, int y, TetrixShape shape);
 	int timeOutTime() {return 1000 / (1 + level); }
@@ -55,5 +62,6 @@ private:
 	int score;
 	int level;
 	int numPiecesDropped; // number of pieces dropped since started
-	TetrixPiece nowBoard[BoardWidth][BoardHeight];
+	bool isLineRemoved; // whether at least 1 line removed this time
+	TetrixShape nowBoard[BoardWidth][BoardHeight];
 };

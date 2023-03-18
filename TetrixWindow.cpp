@@ -11,7 +11,16 @@ TetrixWindow::TetrixWindow(QWidget *parent)
     ui.boardFrame->layout()->addWidget(board);
 
     board->setNextPieceLabel(ui.nextPieceLabel);
+    // button function
     connect(ui.startButton, &QPushButton::clicked, board, &TetrixBoard::start);
+
+    // LCD changed function
+    //connect(board, &TetrixBoard::scoreChanged, ui.scoreNumber, &QLCDNumber::display);
+    connect(board, &TetrixBoard::scoreChanged, ui.scoreNumber, QOverload<int>::of(&QLCDNumber::display));
+    connect(board, &TetrixBoard::levelChanged, ui.levelNumber, QOverload<int>::of(&QLCDNumber::display));
+    connect(board, &TetrixBoard::linesRemovedChanged, ui.lineNumber, QOverload<int>::of(&QLCDNumber::display));
+
+
 
     //connect(ui.startButton, &QPushButton::clicked, board, &TetrixBoard::start);
   
