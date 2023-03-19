@@ -1,7 +1,0 @@
-﻿  moc TetrixBoard.h
-  TetrixBoard.cpp
-  TetrixWindow.cpp
-  main.cpp
-  moc_TetrixBoard.cpp
-  moc_TetrixWindow.cpp
-  Tetrix_Qt.vcxproj -> D:\WorkData\VisualStudioNew\tetrix_qt\x64\Debug\Tetrix_Qt.exe
