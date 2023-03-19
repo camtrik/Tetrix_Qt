@@ -46,6 +46,7 @@ public:
     QPushButton *startButton;
     QSpacerItem *horizontalSpacer;
     QPushButton *pauseButton;
+    QPushButton *promptButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -54,16 +55,17 @@ public:
     {
         if (TetrixWindowClass->objectName().isEmpty())
             TetrixWindowClass->setObjectName(QString::fromUtf8("TetrixWindowClass"));
-        TetrixWindowClass->resize(1104, 1256);
+        TetrixWindowClass->resize(969, 1365);
         centralWidget = new QWidget(TetrixWindowClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        centralWidget->setStyleSheet(QString::fromUtf8(""));
         horizontalLayout = new QHBoxLayout(centralWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         boardFrame = new QFrame(centralWidget);
         boardFrame->setObjectName(QString::fromUtf8("boardFrame"));
-        boardFrame->setMinimumSize(QSize(650, 900));
+        boardFrame->setMinimumSize(QSize(600, 1200));
         boardFrame->setFrameShape(QFrame::StyledPanel);
         boardFrame->setFrameShadow(QFrame::Raised);
 
@@ -103,6 +105,7 @@ public:
 
         levelNumber = new QLCDNumber(otherFrame);
         levelNumber->setObjectName(QString::fromUtf8("levelNumber"));
+        levelNumber->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout->addWidget(levelNumber);
 
@@ -134,6 +137,16 @@ public:
         startButton = new QPushButton(otherFrame);
         startButton->setObjectName(QString::fromUtf8("startButton"));
         startButton->setMinimumSize(QSize(150, 80));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Cambria"));
+        font1.setPointSize(14);
+        font1.setBold(true);
+        font1.setItalic(true);
+        font1.setWeight(75);
+        startButton->setFont(font1);
+        startButton->setCheckable(false);
+        startButton->setAutoDefault(false);
+        startButton->setFlat(true);
 
         horizontalLayout_2->addWidget(startButton);
 
@@ -144,11 +157,20 @@ public:
         pauseButton = new QPushButton(otherFrame);
         pauseButton->setObjectName(QString::fromUtf8("pauseButton"));
         pauseButton->setMinimumSize(QSize(150, 80));
+        pauseButton->setFont(font1);
+        pauseButton->setFlat(true);
 
         horizontalLayout_2->addWidget(pauseButton);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
+
+        promptButton = new QPushButton(otherFrame);
+        promptButton->setObjectName(QString::fromUtf8("promptButton"));
+        promptButton->setFont(font1);
+        promptButton->setFlat(true);
+
+        verticalLayout->addWidget(promptButton);
 
 
         horizontalLayout->addWidget(otherFrame);
@@ -156,7 +178,7 @@ public:
         TetrixWindowClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(TetrixWindowClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1104, 26));
+        menuBar->setGeometry(QRect(0, 0, 969, 26));
         TetrixWindowClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(TetrixWindowClass);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -166,6 +188,9 @@ public:
         TetrixWindowClass->setStatusBar(statusBar);
 
         retranslateUi(TetrixWindowClass);
+
+        startButton->setDefault(false);
+
 
         QMetaObject::connectSlotsByName(TetrixWindowClass);
     } // setupUi
@@ -180,6 +205,7 @@ public:
         label_3->setText(QCoreApplication::translate("TetrixWindowClass", "SCORE", nullptr));
         startButton->setText(QCoreApplication::translate("TetrixWindowClass", "Start", nullptr));
         pauseButton->setText(QCoreApplication::translate("TetrixWindowClass", "Pause", nullptr));
+        promptButton->setText(QCoreApplication::translate("TetrixWindowClass", "HOW TO PLAY?", nullptr));
     } // retranslateUi
 
 };

@@ -4,6 +4,7 @@
 #include <QPointer>
 #include <QLabel>
 #include "tetrixpiece.h"
+#include <QDebug>
 
 class TetrixBoard : public QFrame
 {
@@ -30,7 +31,7 @@ protected:
 
 private:
 	// number of squares per row and column
-	enum { BoardWidth = 10, BoardHeight = 22 };
+	enum { BoardWidth = 10, BoardHeight = 30 };
 
 	TetrixShape& shapeAt(int i, int j) { return nowBoard[i][j]; }
 	// width and height of a square
@@ -65,3 +66,5 @@ private:
 	bool isLineRemoved; // whether at least 1 line removed this time
 	TetrixShape nowBoard[BoardWidth][BoardHeight];
 };
+
+

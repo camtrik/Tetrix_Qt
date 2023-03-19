@@ -3,7 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_TetrixWindow.h"
 #include "TetrixBoard.h"
-
+#include <QMessageBox>
 
 class TetrixWindow : public QMainWindow
 {
@@ -13,9 +13,12 @@ public:
     TetrixWindow(QWidget *parent = nullptr);
     ~TetrixWindow();
 
-private slots:
-    //void testButtonClicked();
+protected:
+    void paintEvent(QPaintEvent* event) override;
 
+public slots:
+    //void testButtonClicked();
+    void promptButtonClicked();
 private:
     Ui::TetrixWindowClass ui;
     TetrixBoard* board;

@@ -6,21 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1104</width>
-    <height>1256</height>
+    <width>969</width>
+    <height>1365</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>TetrixWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QFrame" name="boardFrame">
       <property name="minimumSize">
        <size>
-        <width>650</width>
-        <height>900</height>
+        <width>600</width>
+        <height>1200</height>
        </size>
       </property>
       <property name="frameShape">
@@ -89,7 +92,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLCDNumber" name="levelNumber"/>
+        <widget class="QLCDNumber" name="levelNumber">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QLabel" name="label">
@@ -133,8 +140,29 @@
              <height>80</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Cambria</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <italic>true</italic>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
             <string>Start</string>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -159,12 +187,43 @@
              <height>80</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Cambria</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <italic>true</italic>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
             <string>Pause</string>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="promptButton">
+         <property name="font">
+          <font>
+           <family>Cambria</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <italic>true</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>HOW TO PLAY?</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -176,7 +235,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1104</width>
+     <width>969</width>
      <height>26</height>
     </rect>
    </property>

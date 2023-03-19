@@ -21,8 +21,8 @@ public:
 	int minY() const;
 	int maxY() const;
 
-	TetrixPiece rotateLeft() const;
-	TetrixPiece rotateRight() const;
+	TetrixPiece rotatedLeft() const;
+	TetrixPiece rotatedRight() const;
 
 private:
 	void setX(int index, int x) { coords[index][0] = x; }
