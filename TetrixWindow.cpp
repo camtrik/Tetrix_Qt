@@ -40,9 +40,9 @@ void TetrixWindow::promptButtonClicked()
 void TetrixWindow::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-    //painter.drawPixmap(rect(), QPixmap("./images/tae.jpg"), QRect());
+    painter.drawPixmap(rect(), QPixmap("./images/tae.jpg"), QRect());
     //painter.drawPixmap(rect(), QPixmap("./images/yelan.jpg"), QRect());
-    painter.drawPixmap(rect(), QPixmap("./images/makoto.jpg"), QRect());
+    //painter.drawPixmap(rect(), QPixmap("./images/makoto.jpg"), QRect());
 
 
 }

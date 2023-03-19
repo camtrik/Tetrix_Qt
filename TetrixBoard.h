@@ -31,7 +31,7 @@ protected:
 
 private:
 	// number of squares per row and column
-	enum { BoardWidth = 10, BoardHeight = 30 };
+	enum { BoardWidth = 10, BoardHeight = 21 };
 
 	TetrixShape& shapeAt(int i, int j) { return nowBoard[i][j]; }
 	// width and height of a square

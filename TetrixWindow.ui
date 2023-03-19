@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>969</width>
-    <height>1365</height>
+    <width>1167</width>
+    <height>1286</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,10 +20,16 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QFrame" name="boardFrame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="minimumSize">
        <size>
-        <width>600</width>
-        <height>1200</height>
+        <width>700</width>
+        <height>800</height>
        </size>
       </property>
       <property name="frameShape">
@@ -235,7 +241,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>969</width>
+     <width>1167</width>
      <height>26</height>
     </rect>
    </property>

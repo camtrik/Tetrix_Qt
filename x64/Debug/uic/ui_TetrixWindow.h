@@ -55,7 +55,7 @@ public:
     {
         if (TetrixWindowClass->objectName().isEmpty())
             TetrixWindowClass->setObjectName(QString::fromUtf8("TetrixWindowClass"));
-        TetrixWindowClass->resize(969, 1365);
+        TetrixWindowClass->resize(1167, 1286);
         centralWidget = new QWidget(TetrixWindowClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         centralWidget->setStyleSheet(QString::fromUtf8(""));
@@ -65,7 +65,12 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         boardFrame = new QFrame(centralWidget);
         boardFrame->setObjectName(QString::fromUtf8("boardFrame"));
-        boardFrame->setMinimumSize(QSize(600, 1200));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(boardFrame->sizePolicy().hasHeightForWidth());
+        boardFrame->setSizePolicy(sizePolicy);
+        boardFrame->setMinimumSize(QSize(700, 800));
         boardFrame->setFrameShape(QFrame::StyledPanel);
         boardFrame->setFrameShadow(QFrame::Raised);
 
@@ -178,7 +183,7 @@ public:
         TetrixWindowClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(TetrixWindowClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 969, 26));
+        menuBar->setGeometry(QRect(0, 0, 1167, 26));
         TetrixWindowClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(TetrixWindowClass);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
